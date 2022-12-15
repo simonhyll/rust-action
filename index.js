@@ -10,5 +10,8 @@ exec('git lfs pull', (error, stdout, stderr) => {
         console.error(`exec error: ${error}`);
         return;
     }
-    const child = spawn(`./bin/rust-action`, inputs, { stdio: 'inherit' })
+    let platform = "ubuntu-latest"
+    if (process.platform === "darwin") platform = "macos-latest"
+    if (process.platform === "win32") platform = "windows-latest"
+    spawn(`./bin/rust-action-${platform}`, inputs, { stdio: 'inherit' })
 })
