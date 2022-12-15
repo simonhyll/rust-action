@@ -14,4 +14,7 @@ exec('git lfs pull', (error, stdout, stderr) => {
     if (process.platform === "darwin") platform = "macos-latest"
     if (process.platform === "win32") platform = "windows-latest.exe"
     spawn(`./bin/rust-action-${platform}`, ["build", ...inputs], { stdio: 'inherit' })
+        .on('exit', function (code) {
+            process.exit(code)
+        });
 })
