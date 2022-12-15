@@ -12,6 +12,6 @@ exec('git lfs pull', (error, stdout, stderr) => {
     }
     let platform = "ubuntu-latest"
     if (process.platform === "darwin") platform = "macos-latest"
-    if (process.platform === "win32") platform = "windows-latest"
+    if (process.platform === "win32") platform = "windows-latest.exe"
     spawn(`./bin/rust-action-${platform}`, inputs, { stdio: 'inherit' })
 })
