@@ -1,2 +1,3 @@
 # rust-action
-Testing making a Rust based Typescript action
+
+Testing making a cross-platform Rust based action
