@@ -55,7 +55,7 @@ jobs:
       - run: mv target/release/rust-action bin/rust-action-${{ matrix.platform }}
         if: matrix.platform == 'macos-latest'
 
-      - run: move /Y target\release\rust-action.exe bin\rust-action-${{ matrix.platform }}.exe
+      - run: move /y "target\release\rust-action.exe" "bin\rust-action-${{ matrix.platform }}.exe"
         if: matrix.platform == 'windows-latest'
 
       - name: GIT commit and push all changed files
