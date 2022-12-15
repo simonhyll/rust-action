@@ -31,13 +31,13 @@ jobs:
           args: --release
 
       - run: mv target/release/rust-action bin/rust-action-${{ matrix.platform }}
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.platform == 'ubuntu-latest'
 
       - run: mv target/release/rust-action bin/rust-action-${{ matrix.platform }}
-        if: matrix.os == 'macos-latest'
+        if: matrix.platform == 'macos-latest'
 
       - run: move target\release\rust-action bin\rust-action-${{ matrix.platform }}
-        if: matrix.os == 'windows-latest'
+        if: matrix.platform == 'windows-latest'
 
       - name: GIT commit and push all changed files
         env:
