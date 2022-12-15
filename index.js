@@ -1,6 +1,6 @@
 const { exec } = require('node:child_process');
 
-exec('git submodule init && git submodule update', (error, stdout, stderr) => {
+exec('git lfs pull', (error, stdout, stderr) => {
     if (error) {
         console.error(`exec error: ${error}`);
         return;
