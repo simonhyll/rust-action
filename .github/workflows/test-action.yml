@@ -6,6 +6,11 @@ on:
       - Build and deploy
     types:
       - completed
+  push:
+    branches:
+      - "main"
+    paths:
+      - ".github/workflows/test-action.yml"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
